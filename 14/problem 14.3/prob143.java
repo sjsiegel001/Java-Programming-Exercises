@@ -14,20 +14,22 @@ public class prob143 extends Application {
 	    	
 			ArrayList<Integer> deck = new ArrayList<Integer>();
 			
-			for (int i = 0; i < 52; i++) {
+			for (int i = 1; i < 53; i++) {
 				deck.add(i);
 			}
 			
 			Collections.shuffle(deck);
 				
-	        GridPane myPane = new GridPane();
+			HBox myBox = new HBox();
 	        
-	        myPane.add(new ImageView(new Image("card/" + deck.get(1) + ".png")), 1, 0);
-	        myPane.add(new ImageView(new Image("card/" + deck.get(2) + ".png")), 2, 0);
-	        myPane.add(new ImageView(new Image("card/" + deck.get(3) + ".png")), 3, 0);
+	        myBox.getChildren().add(new ImageView(new Image("card/" + deck.get(1) + ".png")));
+	        myBox.getChildren().add(new ImageView(new Image("card/" + deck.get(2) + ".png")));
+	        myBox.getChildren().add(new ImageView(new Image("card/" + deck.get(3) + ".png")));
+	        myBox.getChildren().add(new ImageView(new Image("card/" + deck.get(4) + ".png")));
+	        myBox.getChildren().add(new ImageView(new Image("card/" + deck.get(5) + ".png")));
 	        
-	        Scene myScene = new Scene(myPane);
-	        MyStage.setTitle("Display 3 Cards");
+	        Scene myScene = new Scene(myBox);
+	        MyStage.setTitle("Display 5 Cards");
 	        MyStage.setScene(myScene);
 	        MyStage.show();
 	    }

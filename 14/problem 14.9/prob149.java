@@ -51,7 +51,7 @@ public class prob149 extends Application {
         //make arcs
         for (int j = 40; j < 360; j += 90) {
             Arc arc = new Arc(x, y, radiusX, radiusY, j, 40);
-            arc.setFill(Color.BLACK);
+            arc.setFill(Color.RED);
             arc.setType(ArcType.ROUND);
             myGroup.getChildren().add(arc);
         }
@@ -60,7 +60,7 @@ public class prob149 extends Application {
         //make arcs
         for (int j = 40; j < 360; j += 90) {
             Arc arc = new Arc(x, y, radiusX, radiusY, j, 40);
-            arc.setFill(Color.BLACK);
+            arc.setFill(Color.GREEN);
             arc.setType(ArcType.ROUND);
             myGroup2.getChildren().add(arc);
         }
@@ -69,7 +69,7 @@ public class prob149 extends Application {
         //make arcs
         for (int j = 40; j < 360; j += 90) {
             Arc arc = new Arc(x, y, radiusX, radiusY, j, 40);
-            arc.setFill(Color.BLACK);
+            arc.setFill(Color.BLUE);
             arc.setType(ArcType.ROUND);
             myGroup3.getChildren().add(arc);
         }
@@ -78,7 +78,7 @@ public class prob149 extends Application {
         //make arcs
         for (int j = 40; j < 360; j += 90) {
             Arc arc = new Arc(x, y, radiusX, radiusY, j, 40);
-            arc.setFill(Color.BLACK);
+            arc.setFill( new Color(Math.random(),Math.random(),Math.random(),1.0) );
             arc.setType(ArcType.ROUND);
             myGroup4.getChildren().add(arc);
         }
