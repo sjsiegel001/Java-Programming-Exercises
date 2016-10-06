@@ -1,4 +1,4 @@
-package prob1515;
+package prob155;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

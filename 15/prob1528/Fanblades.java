@@ -1,32 +1,45 @@
 package prob1528;
 
-import javafx.scene.Group;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.ArcType;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 public class Fanblades extends Pane {
 	
-	
+	private Arc[] myBlades = new Arc[4];
+	int spinAmount = -5;
 	
 	public Fanblades() {
-		paintFan();
+		displayFan();
+        setMinHeight(200);
+        setMinWidth(200);
 	}
 	
-	protected void paintFan() {
-        Group myGroup = new Group();
+	protected void displayFan() {	
+		
+        Circle circle = new Circle(100,100,100,Color.TRANSPARENT);
+        circle.setStroke(Color.BLACK);
+		
         //make arcs
-        int x = 50;
-        int y = 50;
-        int radiusX = 20;
-        int radiusY = 20;
-        for (int j = 40; j < 360; j += 90) {
-            Arc arc = new Arc(x, y, radiusX, radiusY, j, 40);
-            arc.setFill(Color.RED);
-            arc.setType(ArcType.ROUND);
-            myGroup.getChildren().add(arc);
+        double bladeRadius = 90;
+        for (int i = 0; i < myBlades.length; i++) {
+            myBlades[i] = new Arc(
+                    100,100,
+                    bladeRadius, bladeRadius,
+                    (i * 90) + 40, 40);
+            myBlades[i].setType(ArcType.ROUND);
         }
-        getChildren().addAll(myGroup);
+        getChildren().addAll(myBlades);
+        getChildren().addAll(circle);
 	}
+	
+    public void spin() {
+    	for (int i = 0; i < myBlades.length; i++) {
+            double prevStartAngle = myBlades[i].getStartAngle();
+            myBlades[i].setStartAngle(prevStartAngle + spinAmount);
+        }
+    }
+	
 }
