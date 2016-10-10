@@ -21,6 +21,7 @@ public class myCircles extends Pane {
 		//System.out.println("x coordinate is: " + x + ", y coordinate is: " + y + ", The mouse button clicked was: " + e);
         if(e == MouseButton.PRIMARY) {
         	Circle myCircle = createPoint(x,y);
+        	myCircle.setFill(new Color(Math.random(), Math.random(), Math.random(), 1));
         	this.getChildren().add(myCircle);
         } else if(e == MouseButton.SECONDARY) {
         	destroyPoint(x, y);

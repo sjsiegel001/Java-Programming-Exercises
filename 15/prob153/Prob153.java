@@ -1,6 +1,7 @@
 package prob153;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -38,6 +39,8 @@ public class Prob153 extends Application {
 
         HBox buttons = new HBox(btUp, btDown, btLeft, btRight);
         buttons.setAlignment(Pos.BOTTOM_CENTER);
+        buttons.setSpacing(10);
+        buttons.setPadding(new Insets(10));
         BorderPane pane = new BorderPane();
         pane.setCenter(myBall);
         pane.setBottom(buttons);
